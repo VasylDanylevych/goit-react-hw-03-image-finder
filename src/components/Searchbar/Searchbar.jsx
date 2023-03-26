@@ -28,7 +28,7 @@ class Searchbar extends Component {
 			<Bar>
 				<SearchForm onSubmit={this.handleSubmit}>
 					<SearchFormButton type='submit'>
-						<Span>Search</Span>
+						🔍<Span>Search</Span>
 					</SearchFormButton>
 
 					<Input

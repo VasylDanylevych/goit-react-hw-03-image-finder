@@ -34,7 +34,7 @@ export const SearchFormButton = styled.button`
 	width: 48px;
 	height: 48px;
 	border: 0;
-	/* background-image: url('https://cdn-icons.flaticon.com/svg/3917/3917132.svg?token=exp=1679479943~hmac=036f8d6268e333509b61ec9ca9f2ac26'); */
+	/* background-image: url('🔍'); */
 	background-size: 40%;
 	background-repeat: no-repeat;
 	background-position: center;

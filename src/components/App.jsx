@@ -13,6 +13,7 @@ class App extends Component {
 		images: [],
 		showBtn: false,
 		isLoading: false,
+		totalPage: null,
 	};
 
 	componentDidUpdate(_, prevState) {
@@ -23,10 +24,12 @@ class App extends Component {
 				.then(data => {
 					if (data.hits.length === 0) throw new Error(Error);
 					const galleryLength = data.hits.length < 12;
+					const totalHits = data.totalHits;
 					this.setState({ showBtn: galleryLength ? false : true });
 
 					this.setState({
 						images: data.hits,
+						totalPage: Math.ceil(totalHits / 12),
 					});
 				})
 				.catch(error => {
@@ -47,6 +50,8 @@ class App extends Component {
 
 	onClick = () => {
 		imgApi.incrementPage();
+		const page = imgApi.page === this.state.totalPage;
+		this.setState({ showBtn: page ? false : true });
 		imgApi.getImg(this.state.inputValue).then(data => {
 			this.setState(prevState => ({
 				images: [...prevState.images, ...data.hits],

@@ -12,4 +12,5 @@ export const List = styled.ul`
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 30px;
+	margin-bottom: 30px;
 `;
